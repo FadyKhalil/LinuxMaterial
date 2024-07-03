@@ -7,7 +7,7 @@
 3. [PHONY Targets](#phony-targets)
 4. [Variables](#variables-in-makefile)
 5. [Automatic Variables](#automatic-variables)
-6. [Pattern Rule](#pattern-rule)
+6. [Pattern Rule Explanation](#Pattern-Rule-Explanation)
 7. [Lab 1](#lab-1)
 8. [Wildcard Characters](#wildcard-characters)
 9. [Common Built-in Functions in Makefiles](#Common-Built-in-Functions-in-Makefiles)
