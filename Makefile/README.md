@@ -197,7 +197,7 @@ A pattern rule in Makefiles is a rule that can be used to build files based on t
 Before using a pattern rule, you might have explicit rules for each target, like this:
 
 ```makefile
-makefileCopy codemain.o: main.c
+main.o: main.c
     $(CC) -c main.c -o main.o
 
 add.o: add.c
@@ -217,7 +217,7 @@ In this example:
 After applying a pattern rule, you can generalize the compilation process using a single rule that matches multiple targets and their corresponding source files:
 
 ```makefile
-makefileCopy code%.o: %.c
+%.o: %.c
     $(CC) -c $< -o $@
 
 program: main.o add.o
@@ -344,7 +344,7 @@ In Makefiles, wildcard characters (`*`, `?`, `[...]`) are used to perform patter
 Wildcards are typically used in targets and prerequisites to specify patterns of files:
 
 ```makefile
-makefileCopy code# Target with wildcard in prerequisites
+# Target with wildcard in prerequisites
 program: *.o
     $(CC) $^ -o $@
 
@@ -362,7 +362,7 @@ program: *.o
 Wildcards are used in recipes to perform actions that apply to multiple files at once:
 
 ```makefile
-makefileCopy code# Recipe using wildcard to clean all object files
+# Recipe using wildcard to clean all object files
 clean:
     rm *.o
 ```
@@ -375,7 +375,7 @@ clean:
 Wildcards are treated as literal strings when used within variable assignments:
 
 ```makefile
-makefileCopy code# Incorrect usage: Wildcard in a variable assignment
+# Incorrect usage: Wildcard in a variable assignment
 objects = *.o
 
 # Correct usage: Explicitly specifying file names
@@ -400,7 +400,7 @@ The `wildcard` function allows Makefiles to find filenames matching a specified 
 **Usage:**
 
 ```makefile
-makefileCopy code# Example: Find all .c files in current directory
+# Example: Find all .c files in current directory
 sources = $(wildcard *.c)
 ```
 
@@ -413,7 +413,7 @@ The `subst` function substitutes occurrences of a substring within a string with
 **Usage:**
 
 ```makefile
-makefileCopy code# Example: Replace all occurrences of 'old' with 'new' in a string
+# Example: Replace all occurrences of 'old' with 'new' in a string
 new_var = $(subst old,new,$(var))
 ```
 
@@ -426,7 +426,7 @@ The `call` function invokes a user-defined function, passing it arguments that c
 **Usage:**
 
 ```makefile
-makefileCopy code# Define a function to echo its arguments
+# Define a function to echo its arguments
 define say_hello
     @echo Hello, $1!
 endef
@@ -463,7 +463,7 @@ In this example:
 ### Solution
 
 ```makefile
-makefileCopy codecc=gcc
+cc=gcc
 INCS= -I ./Includes
 src= $(wildcard *.c)
 projectName= iti.elf
