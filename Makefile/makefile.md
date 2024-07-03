@@ -47,6 +47,7 @@
 ## Basic Syntax and Structure
 
 A Makefile consists of rules. Each rule has three parts:
+
 1. Target: the file to be generated.
 2. Prerequisites: the files that are used as input to create the target.
 3. Recipe: the shell commands used to create the target.
@@ -57,6 +58,7 @@ target: prerequisites
 ```
 
 ### Example
+
 ```makefile
 add.o: add.c
 	gcc -c add.c
